@@ -12,7 +12,7 @@ public class SauceDemoTest extends BaseTest{
     final String PASSWORD = "secret_sauce";
 
     @Test
-    public void logIn() {
+    public void logInTest() {
         driver.get(Urls.REGISTER_FORM_URL);
         driver.findElement(By.id("user-name")).sendKeys(USERNAME);
         driver.findElement(By.id("password")).sendKeys(PASSWORD);
