@@ -12,7 +12,7 @@ public class BaseTest {
     WebDriver driver;
 
     @BeforeMethod
-    public void setUp() {
+    public void setUpTest() {
         PropertyManager propertyManager = new PropertyManager();
         propertyManager.loadData();
         System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_DRIVER"));

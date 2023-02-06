@@ -12,15 +12,19 @@ public class AccountCreatePage extends BasePage {
     public AccountCreatePage(WebDriver driver) {
         super(driver);
     }
+
     public void openAccountCreatePage() {
         driver.get(Urls.REGISTER_FORM_URL);
     }
+
     public void inputUserName(String userName) {
         driver.findElement(USER_NAME).sendKeys(userName);
     }
+
     public void inputPassword(String password) {
         driver.findElement(PASSWORD).sendKeys(password);
     }
+
     public void clickLogin() {
         driver.findElement(LOGIN_BUTTON).click();
     }

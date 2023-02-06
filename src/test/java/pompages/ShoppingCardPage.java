@@ -10,9 +10,11 @@ public class ShoppingCardPage extends BasePage {
     public ShoppingCardPage(WebDriver driver) {
         super(driver);
     }
+
     public String receiveActualPrice() {
         return driver.findElement(ACTUAL_PRICE).getText();
     }
+
     public String receiveNameItem() {
         return driver.findElement(ACTUAL_NAME_ITEM).getText();
     }
