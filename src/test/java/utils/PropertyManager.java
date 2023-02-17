@@ -11,6 +11,7 @@ public class PropertyManager {
     public PropertyManager() {
         propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
     }
+
     public void loadData() {
         prop = new Properties();
         try {
@@ -19,6 +20,7 @@ public class PropertyManager {
             e.printStackTrace();
         }
     }
+
     public String get(String propertyName) {
         loadData();
         return prop.getProperty(propertyName);
