@@ -6,7 +6,7 @@ import pompages.AccountCreatePage;
 import pompages.ProductsPage;
 import pompages.ShoppingCardPage;
 
-public class SauceDemoTest extends BaseTest {
+public class SauceDemoTest extends BaseWithFactoryTest {
     final String USERNAME = "standard_user";
     final String PASSWORD = "secret_sauce";
 
