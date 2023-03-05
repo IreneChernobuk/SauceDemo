@@ -1,15 +1,16 @@
 package factorymanager;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import utils.PropertyManager;
 
-public class FirefoxDriverManager extends DriverManager {
+public class FirefoxDriverManagerWithoutBoni extends DriverManager {
 
     @Override
     public void createDriver() {
-        WebDriverManager.firefoxdriver().setup();
+        PropertyManager propertyManager = new PropertyManager();
+        System.setProperty("webdriver.gecko.driver", "PATH_TO_FIREFOX");
         FirefoxOptions options = new FirefoxOptions();
         options.setProfile(new FirefoxProfile());
         driver = new FirefoxDriver(options);

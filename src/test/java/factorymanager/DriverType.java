@@ -2,5 +2,6 @@ package factorymanager;
 
 public enum DriverType {
     CHROME,
-    FIREFOX
+    FIREFOX,
+    REMOTE
 }
