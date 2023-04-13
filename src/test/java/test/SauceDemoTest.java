@@ -1,5 +1,6 @@
 package test;
 
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pompages.AccountCreatePage;
@@ -7,11 +8,17 @@ import pompages.ProductsPage;
 import pompages.ShoppingCardPage;
 import utils.RetryAnalyzer;
 
+@Epic("User Management")
+@Feature("Registration")
+@Story("User Registration")
 public class SauceDemoTest extends BaseWithThreadLocalTest {
     final String USERNAME = "standard_user";
     final String PASSWORD = "secret_sauce";
 
     @Test(retryAnalyzer = RetryAnalyzer.class, invocationCount = 2, threadPoolSize = 2)
+    @Description("compare item name and price")
+    @Issue("QA-125")
+    @Severity(SeverityLevel.NORMAL)
     public void logInTest() {
         AccountCreatePage accountCreatePage = new AccountCreatePage(getDriver());
         accountCreatePage.openAccountCreatePage();
