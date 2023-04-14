@@ -1,16 +1,10 @@
 package utils;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import test.BaseWithFactoryTest;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class TestListeners implements ITestListener {
     @Override
@@ -27,13 +21,9 @@ public class TestListeners implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         Object currentClass = iTestResult.getInstance();
         WebDriver driver = ((BaseWithFactoryTest) currentClass).getDriver();
-        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-        byte[] sourceFile = takesScreenshot.getScreenshotAs(OutputType.BYTES);
-        try {
-            Files.write(Paths.get("src/test/resources/screenshot1.png"), sourceFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       AllureService allureService = new AllureService();
+       allureService.getSystemName();
+       allureService.takeScreenshot(driver);
     }
 
     @Override
